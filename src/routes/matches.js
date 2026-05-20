@@ -25,7 +25,7 @@ matchRouter.get('/', (req, res) => {
             .orderBy((desc(matches.createdAt)))
             .limit(limit); 
 
-        res.status(200).json({ data });
+        res.status(200).json({ data: data });
     } catch (error) {
         return res.status(500).json({ error: "Error fetching matches", details: JSON.stringify(error)});
     }
